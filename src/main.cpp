@@ -119,7 +119,7 @@ void loop()
             Serial.printf("Duration: %d Hours %d Minutes\n", hours, minutes);
 
             char logBuffer[100];
-            sprintf(logBuffer, "%04d/%02d/%02d %02d:%02d,%04d/%02d/%02d %02d:%02d,%.2f",
+            snprintf(logBuffer, sizeof(logBuffer), "%04d/%02d/%02d %02d:%02d,%04d/%02d/%02d %02d:%02d,%.2f",
                     sleepTimeObj.year(), sleepTimeObj.month(), sleepTimeObj.day(), sleepTimeObj.hour(), sleepTimeObj.minute(),
                     wakeTime.year(), wakeTime.month(), wakeTime.day(), wakeTime.hour(), wakeTime.minute(),
                     excelHours);
